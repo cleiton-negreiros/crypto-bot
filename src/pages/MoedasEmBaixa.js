@@ -23,7 +23,7 @@ ChartJS.register(
   Legend
 );
 
-const CryptoBot = () => {
+const MoedasEmBaixa = () => {
   const [coins, setCoins] = useState([]); // Lista de moedas em baixa
   const [selectedCoin, setSelectedCoin] = useState(null); // Moeda selecionada
   const [historico, setHistorico] = useState(null); // Dados históricos da moeda selecionada
@@ -49,7 +49,7 @@ const CryptoBot = () => {
     };
 
     fetchData();
-    const interval = setInterval(fetchData, 15000); // Atualiza a cada 15 segundos
+    const interval = setInterval(fetchData, 50000); // Atualiza a cada 15 segundos
 
     return () => clearInterval(interval); // Limpa o intervalo ao desmontar o componente
   }, []);
@@ -141,4 +141,4 @@ const CryptoBot = () => {
   );
 };
 
-export default CryptoBot;
+export default MoedasEmBaixa;

@@ -18,12 +18,18 @@ ul {
 }
 
 li {
-  background-color: #1a1a1a; /* Fundo cinza escuro para os itens */
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
+    background-color: #1a1a1a;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+li:hover {
+  background-color: #333;
 }
 
 img {
@@ -72,4 +78,37 @@ span {
   to {
     transform: rotate(360deg);
   }
+}
+
+
+nav {
+  background-color: #1a1a1a;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #00bcd4;
+}
+
+nav ul li a.active {
+  color: #00bcd4;
+  border-bottom: 2px solid #00bcd4;
 }
