@@ -2,13 +2,11 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 module.exports = function (app) {
   app.use(
-    '/api', // Prefixo para as requisições
+    '/ws', // Rota do WebSocket
     createProxyMiddleware({
-      target: 'https://api.coingecko.com', // URL da API
+      target: 'ws://localhost:8080', // URL do servidor WebSocket
+      ws: true, // Habilita suporte a WebSocket
       changeOrigin: true,
-      pathRewrite: {
-        '^/api': '', // Remove o prefixo /api da URL
-      },
     })
   );
 };

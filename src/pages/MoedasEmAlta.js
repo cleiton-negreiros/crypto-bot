@@ -47,12 +47,12 @@ const MoedasEmAlta = () => {
         setError(null); // Limpa o erro se a requisição for bem-sucedida
       } catch (error) {
         console.error('Erro ao buscar dados:', error);
-        setError('Erro ao carregar os dados. Tente novamente mais tarde.'); // Exibe uma mensagem de erro
+        setError('Erro ao carregar os dados. Verifique sua conexão com a internet.'); // Exibe uma mensagem de erro
       }
     };
 
     fetchData();
-    const interval = setInterval(fetchData, 60000); // Atualiza a cada 60 segundos (1 minuto)
+    const interval = setInterval(fetchData, 70000); // Atualiza a cada 15 segundos
 
     return () => clearInterval(interval); // Limpa o intervalo ao desmontar o componente
   }, []);
@@ -77,11 +77,7 @@ const MoedasEmAlta = () => {
       setError(null); // Limpa o erro se a requisição for bem-sucedida
     } catch (error) {
       console.error('Erro ao buscar histórico:', error);
-      if (error.response && error.response.status === 429) {
-        setError('Limite de requisições excedido. Tente novamente mais tarde.'); // Mensagem específica para erro 429
-      } else {
-        setError('Erro ao carregar o histórico de preços. Verifique sua conexão com a internet.'); // Mensagem genérica
-      }
+      setError('Erro ao carregar o histórico de preços. Verifique sua conexão com a internet.'); // Exibe uma mensagem de erro
     }
   };
 

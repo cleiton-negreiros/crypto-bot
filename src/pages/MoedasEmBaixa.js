@@ -49,7 +49,7 @@ const MoedasEmBaixa = () => {
     };
 
     fetchData();
-    const interval = setInterval(fetchData, 50000); // Atualiza a cada 15 segundos
+    const interval = setInterval(fetchData, 70000); // Atualiza a cada 15 segundos
 
     return () => clearInterval(interval); // Limpa o intervalo ao desmontar o componente
   }, []);
